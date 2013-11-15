@@ -1,0 +1,14 @@
+{
+	"Required SDK Stuff":					"-----------------------------------------------------------------------------",
+	"Menu-RateUs-Title":					"",
+	"Menu-RateUs-Msg": 						"Rate this demo!",
+	"Menu-RateUs-Later": 					"No, not now",
+	"Menu-RateUs-Never": 					"Don't ask me again",
+	"Menu-RateUs-Rate": 					"Rate and support",
+
+
+	"Optional SDK Stuff":					"-----------------------------------------------------------------------------",
+	"Button-Back":							"Back",
+	"Demos-Camera":							"Camera",
+	"Demos-Joystick":						"Joystick",
+}

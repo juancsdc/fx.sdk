@@ -1,0 +1,71 @@
+settings =
+{
+	orientation =
+	{
+		default = "portait",
+		supported = {"portait"},
+	},
+
+	android =
+	{
+		usesPermissions =
+		{
+			"android.permission.INTERNET",
+			"android.permission.ACCESS_WIFI_STATE",
+			"android.permission.READ_PHONE_STATE",
+			"android.permission.ACCESS_NETWORK_STATE",
+		}
+	},
+
+	iphone =
+	{
+		plist =
+		{
+			UIPrerenderedIcon = true,
+			UIApplicationExitsOnSuspend = false,
+			FacebookAppID = "430425093696273",
+			CFBundleURLTypes =
+			{
+				{
+					CFBundleURLSchemes = {
+						"fb430425093696273",
+					}
+				}
+			},
+			CFBundleIconFile = "Icon.png",
+			CFBundleIconFiles = {
+				"Icon.png",
+				"Icon@2x.png",
+				"Icon-Small-40.png",
+				"Icon-Small-40@2x.png",
+				"Icon-60.png",
+				"Icon-60@2x.png",
+				"Icon-72.png",
+				"Icon-72@2x.png",
+				"Icon-76.png",
+				"Icon-76@2x.png",
+				"Icon-Small-50.png",
+				"Icon-Small-50@2x.png",
+				"Icon-Small.png",
+				"Icon-Small@2x.png"
+			},
+			UIAppFonts =
+			{
+			}
+		},
+	},
+	plugins =
+	{
+		["CoronaProvider.ads.admob"] =
+		{
+			-- required
+			publisherId = "com.coronalabs",
+		},
+		
+        ["CoronaProvider.ads.iads"] =
+        {
+            -- required
+            publisherId = "com.coronalabs",
+        },
+	},
+}
