@@ -32,7 +32,7 @@ function text:new(...)
 	local text = display.newText(unpack(arg))
 	text.id = "fxText" .. math.random(0, w)
 
-	setTextColor(text, fx.theme.text.fontColor)
+	setFillColor(text, fx.theme.text.fontColor)
 
 	return text
 end

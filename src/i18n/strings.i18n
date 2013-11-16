@@ -11,11 +11,13 @@
 	"Button-Back":							"Back",
 
 	"Menu-Core":							"Core",
-	"Menu-Animation":						"Animation",
+	"Menu-Easing":							"Easing",
 	"Menu-UI":								"UI",
-	"Menu-Buttons":							"Buttons",
-	"Menu-Themes":							"Themes",
+	"Menu-Widgets":							"Widgets",
 	"Menu-Modules":							"Modules",
 	"Menu-Camera":							"Camera",
-	"Menu-Joystick":						"Joystick"
+	"Menu-Joystick":						"Joystick",
+
+	"Home-Title":							"FX.SDK Demo Center",
+	"Home-Welcome":							"Welcome to the FX.SDK Demo Center",
 }

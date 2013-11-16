@@ -14,7 +14,8 @@ function scene:createScene(event)
 	scene.joystick = fx.joystick:new({
 		allowedArea = {
 			x = w/2, y = h/2, width = w, height = h
-		}
+		},
+		view = sceneGroup
 	})
 
 	-- Create a camera with default parameters (manual camera)
@@ -39,6 +40,8 @@ end
 function scene:enterScene(event)
 	local sceneGroup = self.view
 
+	sideBar.content:insert(sceneGroup)
+
 	Runtime:addEventListener("enterFrame", scene.onEnterFrame)
 
 	scene.camera:attach(scene.player, {
@@ -56,6 +59,7 @@ end
 function scene:destroyScene(event)
 	local sceneGroup = self.view
 
+	scene.joystick:removeSelf()
 end
 
 ---------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 local ainfo = {
-	name = "FX.SDK Demo Game",
+	name = "FX.SDK Demo Center",
 	
 	facebookAppId = "",
 	facebookPermissions = {"publish_stream"},

@@ -34,6 +34,9 @@ _G.startH = 0
 _G.w = display.contentWidth
 _G.h = display.contentHeight
 
+_G._w = display.contentWidth
+_G._h = display.contentHeight
+
 _G.centerX = w/2
 _G.centerY = h/2
 

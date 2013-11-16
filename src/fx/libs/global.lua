@@ -66,14 +66,6 @@ function _G.setFillColor(obj, colorArray)
 	obj:setFillColor(colorArray[1], colorArray[2], colorArray[3], fnn(colorArray[4], 255))
 end
 
--- ==
---    setTextColor( obj ) - Apply setFillColor to an object
---    obj - The object to test.
--- == 
-function _G.setTextColor(obj, colorArray)
-	obj:setTextColor(colorArray[1], colorArray[2], colorArray[3], fnn(colorArray[4], 255))
-end
-
 --==
 --   safeRemove(obj) - (More) safely remove a displayObject.
 --   obj - Object to remove.

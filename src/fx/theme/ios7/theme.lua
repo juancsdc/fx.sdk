@@ -9,6 +9,7 @@ _G.fx.themes["ios7"] = {
 
 	-- texts
 	text 	= {
+		font 		= native.systemFontBold,
 		fontColor	= {0, 0, 0},
 	},
 
@@ -26,8 +27,8 @@ _G.fx.themes["ios7"] = {
 	},
 
 	-- title bar
-	bar = {
-		fill		= {0.95, 0.95, 0.95},
+	titleBar = {
+		fill		= {0.99, 0.99, 0.99},
 		stroke  	= {0.7, 0.7, 0.7},
 		strokeWidth = 2,
 		width		= w,
@@ -38,16 +39,15 @@ _G.fx.themes["ios7"] = {
 			color 			= {0, 0, 0},
 			font 			= native.SystemFontBold,
 		},
-		textButton 	= {
-			fontSize 		= iif(fx.device.isTablet, 21.7, 21.7*1.8),
-			height 			= iif(fx.device.isTablet, 5, 25*1.8),
-			fxType			= "textOnly",
-		},
-		iconButton 	= {
-			fontSize 		= iif(fx.device.isTablet, 21.7, 21.7*1.8),
-			width			= iif(fx.device.isTablet, 5, 25*1.8),
-			height 			= iif(fx.device.isTablet, 5, 25*1.8),
-			fxType			= "image",
-		}
 	},
+
+	-- side bar
+	sideBar = {
+		navigation = {
+			width = iif(fx.device.isTablet, w*3/10, w*4/10)
+		},
+
+		expandAnimation = {time = 200, transition = fx.animation.ease.outBack},
+		collapseAnimation = {time = 200, transition = fx.animation.ease.outBack},
+	}
 }
