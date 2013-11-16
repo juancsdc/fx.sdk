@@ -9,6 +9,13 @@
 
 	"Optional SDK Stuff":					"-----------------------------------------------------------------------------",
 	"Button-Back":							"Back",
-	"Demos-Camera":							"Camera",
-	"Demos-Joystick":						"Joystick",
+
+	"Menu-Core":							"Core",
+	"Menu-Animation":						"Animation",
+	"Menu-UI":								"UI",
+	"Menu-Buttons":							"Buttons",
+	"Menu-Themes":							"Themes",
+	"Menu-Modules":							"Modules",
+	"Menu-Camera":							"Camera",
+	"Menu-Joystick":						"Joystick"
 }

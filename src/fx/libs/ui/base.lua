@@ -124,23 +124,3 @@ function fxUI.newTitleBar(params)
 	end
 	return fx.ui.titleBar:new(params)
 end
-
--- ==
---    fx.ui.newSideBar(params) - create a new sidebar
--- ==
-function fxUI.newSideBar(params)
-	if( not _G.fx.ui.sideBar ) then
-		require("fx.libs.ui.sideBar")
-	end
-	return fx.ui.sideBar:new(params)
-end
-
--- ==
---    fx.ui.tableView(params) - create a new table view
--- ==
-function fxUI.newTableView(params)
-	if( not _G.fx.ui.tableView ) then
-		require("fx.libs.ui.tableView")
-	end
-	return fx.ui.tableView:new(params)
-end
