@@ -9,8 +9,10 @@
 
 	"Optional SDK Stuff":					"-----------------------------------------------------------------------------",
 	"Button-Back":							"Back",
+	"Button-Start":							"Start",
 
 	"Menu-Core":							"Core",
+	"Menu-Animation":						"Animation",
 	"Menu-Easing":							"Easing",
 	"Menu-UI":								"UI",
 	"Menu-Widgets":							"Widgets",
@@ -20,4 +22,6 @@
 
 	"Home-Title":							"FX.SDK Demo Center",
 	"Home-Welcome":							"Welcome to the FX.SDK Demo Center",
+
+	"Animation-Easing-Title":				"Easing Demo"
 }

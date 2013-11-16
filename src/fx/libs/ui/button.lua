@@ -32,12 +32,6 @@ function fxButton:new(params)
 
 	table.merge(table.merge(fx.theme.button, params.class), params)
 
-	if not params.width and params.fxType == 'textOnly' then 
-		local txtTmp = display.newText(params.label, 0, 0, params.font, params.fontSize)
-		params.width = txtTmp.contentWidth + fnn(fx.theme.button.type.textOnly.padding, 0)
-		safeRemove(txtTmp)
-	end
-
 	local button = widget.newButton(params)
 	
 	button.id = fnn(params.id, "fxButton" .. math.random(0, w))

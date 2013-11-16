@@ -1,6 +1,6 @@
 _G.fx.themes["candy"] = {
 	name = "candy",
-	base = "android",
+	base = "ios7",
 
 	button = {
 		defaultFile = fx.ui.getAsset("images/button.png"),
@@ -31,10 +31,6 @@ _G.fx.themes["candy"] = {
 				{time=800, xScale=1, yScale=1}
 			}
 		}
-	},
-
-	tableView = {
-		audio 	= "button",
 	},
 
 	loadSounds = function()

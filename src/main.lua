@@ -72,7 +72,7 @@ local function main()
 	end
 
 	
-	storyboard.gotoScene("scripts.home", "fade", 100)
+	storyboard.gotoScene("scripts.demos.animation.easing", "fade", 100)
 
 	return true
 end
