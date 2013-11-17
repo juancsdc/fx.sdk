@@ -4,31 +4,28 @@ _G.fx.themes["android"] = {
 
 	-- application background
 	application = {
-		bgColor = {1, 1, 1}
+		bg = {1, 1, 1},
 	},
 
 	-- texts
 	text 	= {
+		font 		= native.systemFontBold,
 		fontColor	= {0, 0, 0},
 	},
 
 	-- buttons
 	button = {
-		type = {
-			textOnly = {
-				padding = 0
-			},
-			image = {
-
-			},
-		},
 		fontSize = iif(fx.device.isTablet, 21.7, 21.7*1.8),
+
+		disabledBehave = {
+			color={0.2,0.2,0.2},
+		}
 	},
 
 	-- title bar
-	bar = {
-		fill		= {0.95, 0.95, 0.95},
-		stroke  	= {0.7, 0.7, 0.7, effect="generator.marchingAnts"},
+	titleBar = {
+		fill		= {0.99, 0.99, 0.99},
+		stroke  	= {0.7, 0.7, 0.7},
 		strokeWidth = 2,
 		width		= w,
 		height 		= iif(fx.device.isTablet, 44, 44*1.8),
@@ -39,4 +36,14 @@ _G.fx.themes["android"] = {
 			font 			= native.SystemFontBold,
 		},
 	},
+
+	-- side bar
+	sideBar = {
+		navigation = {
+			width = iif(fx.device.isTablet, w*3/10, w*4/10)
+		},
+
+		expandAnimation = {time = 200, transition = fx.animation.ease.outBack},
+		collapseAnimation = {time = 200, transition = fx.animation.ease.outBack},
+	}
 }

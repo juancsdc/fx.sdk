@@ -23,5 +23,9 @@
 	"Home-Title":							"FX.SDK Demo Center",
 	"Home-Welcome":							"Welcome to the FX.SDK Demo Center",
 
-	"Animation-Easing-Title":				"Easing Demo"
+	"Animation-Easing-Title":				"Easing Demo",
+
+	"UI-Widget-Button-Enabled":				"Enabled",
+	"UI-Widget-Button-Disabled":			"Disabled",
+	"UI-Widget-Theme":						"Select your favourite theme",
 }

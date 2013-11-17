@@ -40,11 +40,16 @@ function fxButton:new(params)
 	button.y = fnn(params.y, 0)
 	if(params.view) then params.view:insert(button) end
 
+	function button:setEnabled(enabled)
+		self._view._isEnabled = isEnabled
+		button:_setStatus("disabled")
+	end
+
 	function button:_setStatus(status)
 		local cp = self.params[status.."Behave"]
 		if (status == "onCancel" and (not cp)) then cp = self.params["onReleaseBehave"] end
 		if not cp then return end
-		if(cp and cp.color and self._view._over) then self._view._over:setFillColor(unpack(cp.color)) end
+		if(cp and cp.color) then self:setFillColor(unpack(cp.color)) end
 
 		fx.animation.forceStop(self, cp.animation)
 

@@ -3,7 +3,6 @@ system.setIdleTimer(false); -- turn off device sleeping
 require("fx.loader")
 
 fx.ui.setStatusBar(display.HiddenStatusBar)
-display.setDefault( "background", unpack(fx.theme.application.bg))
 
 local storyboard = require "storyboard"
 local widget = require("widget")
@@ -14,10 +13,10 @@ local menu = {
 	{demo = "", message = "Animation", isCategory = true},
 	{demo = "animation.easing", message = "Easing"},
 	{demo = "", message = "UI", isCategory = true},
-	{demo = "widget", message = "Widgets"},
+	{demo = "ui.widget", message = "Widgets"},
 	{demo = "", message = "Modules", isCategory = true},
-	{demo = "camera", message = "Camera"},
-	{demo = "joystick", message = "Joystick"},
+	{demo = "modules.camera", message = "Camera"},
+	{demo = "modules.joystick", message = "Joystick"},
 }
 
 -- Handle row rendering
@@ -72,7 +71,7 @@ local function main()
 	end
 
 	
-	storyboard.gotoScene("scripts.demos.animation.easing", "fade", 100)
+	storyboard.gotoScene("scripts.demos.ui.widget", "fade", 100)
 
 	return true
 end

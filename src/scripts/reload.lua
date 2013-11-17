@@ -3,19 +3,18 @@ local scene = storyboard.newScene()
 
 function scene:createScene(event)
 	local sceneGroup = self.view
-
-	self.bg = display.newRect(sceneGroup, 0, 0, w, h)
-	setFillColor(scene.bg, fx.theme.application.bgColor)
 end
 
 function scene:enterScene(event)
 	local sceneGroup = self.view
 
-	self.reloadGUI = event.params.reloadGUI
-
 	native.setActivityIndicator(true)
 	storyboard.purgeAll()
-	storyboard.gotoScene(storyboard.getPrevious(), {params = event.params})
+	if event.params then
+		storyboard.gotoScene(storyboard.getPrevious(), {params = event.params})
+	else
+		storyboard.gotoScene(storyboard.getPrevious(), {params = event.params})
+	end
 end
 
 function scene:exitScene(event)

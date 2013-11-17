@@ -62,19 +62,31 @@ end
 -- ==
 function fxUI.loadTheme()
 	local theme = fxUI.getTheme()
-	-- Load the user's theme
-	require(themeDir:replace("{theme}", theme))
-	fx.theme = table.copy(fx.themes[theme])
-	-- Load the base theme
-	require("fx.theme."..fx.theme.base..".theme")
-	-- Merge the 2 themes together
-	table.merge(fx.themes[fx.theme.base], fx.theme)
-	-- Set the widget's theme
-	widget.setTheme("widget_theme_" .. fx.theme.coronaTheme)
+
+	if theme == "ios7" or theme == "android" then -- native themes
+		-- Load the user's theme
+		require("fx.theme."..theme..".theme")
+		fx.theme = table.copy(fx.themes[theme])
+		-- Set the widget's theme
+		widget.setTheme("widget_theme_" .. fx.theme.coronaTheme)
+	else
+		-- Load the user's theme
+		require(themeDir:replace("{theme}", theme))
+		fx.theme = table.copy(fx.themes[theme])
+		-- Load the base theme
+		require("fx.theme."..fx.theme.base..".theme")
+		-- Merge the 2 themes together
+		table.merge(fx.themes[fx.theme.base], fx.theme)
+		-- Set the widget's theme
+		widget.setTheme("widget_theme_" .. fx.theme.coronaTheme)
+	end
 	-- load theme sounds
 	if fx.theme.loadSounds then
 		fx.theme.loadSounds()
 	end
+
+	-- draw the background accordingly
+	display.setDefault( "background", unpack(fx.theme.application.bg))
 end
 
 -- ==

@@ -15,15 +15,11 @@ _G.fx.themes["ios7"] = {
 
 	-- buttons
 	button = {
-		type = {
-			textOnly = {
-				padding = 0
-			},
-			image = {
-
-			},
-		},
 		fontSize = iif(fx.device.isTablet, 21.7, 21.7*1.8),
+
+		disabledBehave = {
+			color={0.2,0.2,0.2},
+		}
 	},
 
 	-- title bar
