@@ -1,8 +1,6 @@
 local storyboard = require("storyboard")
 local scene = storyboard.newScene()
 
-local widget = require("widget")
-
 fx.ui.getAsset("titleBar.png")
 
 local function buttonPressed(event)
@@ -29,7 +27,7 @@ end
 local function onRowTouch( event )
 	local phase = event.phase
 
-	if "press" == phase then
+	if "release" == phase then
 		fx.ui.setTheme(themes[event.target.index])
 		storyboard.gotoScene("scripts.reload")
 	end
@@ -43,22 +41,22 @@ function scene:createScene(event)
 	title.y = 20
 
 	-- Create table view with themes
-	local tableView = widget.newTableView
+	local tableView = fx.ui.newTableView
 	{
-		width = w/2,
-		height = 300,
+		width 		= w/2,
+		height 		= 300,
 		onRowRender = onRowRender,
-		onRowTouch = onRowTouch,
+		onRowTouch 	= onRowTouch,
+		view 		= sceneGroup
 	}
 	for i = 1, #themes do
 		tableView:insertRow
 		{
-			rowHeight  = 50,
+			isSelected = fx.ui.getTheme() == themes[i]
 		}
 	end
 	tableView.x = w/2
 	tableView.y = 50+tableView.height/2
-	sceneGroup:insert(tableView)
 
 	-- Create buttons
 	local button1 = fx.ui.newButton({

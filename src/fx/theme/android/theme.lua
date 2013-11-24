@@ -45,5 +45,19 @@ _G.fx.themes["android"] = {
 
 		expandAnimation = {time = 200, transition = fx.animation.ease.outBack},
 		collapseAnimation = {time = 200, transition = fx.animation.ease.outBack},
-	}
+	},
+
+	-- table view
+	tableView = {
+		
+	},
+
+	tableViewRow = {
+		normal = {
+			
+		},
+		selected = {
+			
+		}
+	},
 }

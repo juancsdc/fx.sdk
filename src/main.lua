@@ -5,7 +5,6 @@ require("fx.loader")
 fx.ui.setStatusBar(display.HiddenStatusBar)
 
 local storyboard = require "storyboard"
-local widget = require("widget")
 
 local menu = {
 	{demo = "", message = "Core", isCategory = true},
@@ -33,7 +32,7 @@ end
 local function onRowTouch( event )
 	local phase = event.phase
 
-	if "press" == phase then
+	if "release" == phase then
 		sideBar:expandCollapse()
 		storyboard.gotoScene("scripts.demos."..menu[event.target.index].demo)
 	end
@@ -50,26 +49,21 @@ local function main()
 		},
 	})
 
-	local tableView = widget.newTableView
+	local tableView = fx.ui.newTableView
 	{
-		left = 0,
-		top = 0,
 		width = sideBar.navigation.width,
 		height = sideBar.navigation.height,
 		onRowRender = onRowRender,
 		onRowTouch = onRowTouch,
+		view = sideBar.navigation
 	}
-	sideBar.navigation:insert(tableView)
-
 
 	for i = 1, #menu do
 		tableView:insertRow
 		{
 			isCategory = menu[i].isCategory,
-			rowHeight  = 50
 		}
 	end
-
 	
 	storyboard.gotoScene("scripts.demos.ui.widget", "fade", 100)
 

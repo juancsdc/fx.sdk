@@ -146,3 +146,13 @@ function fxUI.newSideBar(params)
 	end
 	return fx.ui.sideBar:new(params)
 end
+
+-- ==
+--    fx.ui.newSideBar(params) - create a new title bar
+-- ==
+function fxUI.newTableView(params)
+	if( not _G.fx.ui.tableView ) then
+		require("fx.libs.ui.tableView")
+	end
+	return fx.ui.tableView:new(params)
+end

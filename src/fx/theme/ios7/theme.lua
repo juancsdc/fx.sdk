@@ -45,5 +45,27 @@ _G.fx.themes["ios7"] = {
 
 		expandAnimation = {time = 200, transition = fx.animation.ease.outBack},
 		collapseAnimation = {time = 200, transition = fx.animation.ease.outBack},
-	}
+	},
+
+	-- table view
+	tableView = {
+		
+	},
+
+	tableViewRow = {
+		normal = {
+			rowHeight 	= iif(fx.device.isTablet, 70, 70),
+			lineColor	= {178, 178, 178},
+		},
+		selected = {
+			rowHeight 	= iif(fx.device.isTablet, 70, 70),
+			rowColor 	= {default = {0.298, 0.631, 1}},
+			lineColor	= {178, 178, 178},
+		},
+
+		category = {
+			rowHeight 	= iif(fx.device.isTablet, 70, 70),
+			lineColor	= {178, 178, 178},
+		}
+	},
 }

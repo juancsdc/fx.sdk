@@ -64,6 +64,24 @@ _G.fx.themes["candy"] = {
 		collapseAnimation = {time = 300, transition = fx.animation.ease.outBounce},
 	},
 
+	-- table view
+	tableView = {
+		hideBackground = true
+	},
+
+	tableViewRow = {
+		normal = {
+			rowHeight 	= 100
+		},
+		selected = {
+			rowHeight 	= 100,
+			rowColor 	= {default = {1,0,0}}
+		},
+		category = {
+			rowHeight 	= 100,
+		}
+	},
+
 	loadSounds = function()
 		fx.sounds.addEffect("button-onPress", fx.ui.getAsset("sounds/button-onPress.wav"))
 		fx.sounds.addEffect("button-onRelease", fx.ui.getAsset("sounds/button-onRelease.wav"))
