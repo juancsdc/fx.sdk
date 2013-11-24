@@ -78,6 +78,8 @@ function joystick:new(params)
       obj.joyAngle = 0
       obj.joyPercent = 0
     end
+    
+    return true
   end
 
   function obj:_setPosition(x, y)
@@ -112,5 +114,7 @@ function joystick:new(params)
   
   obj.allowedArea:addEventListener("touch", obj.touchHandler)
  
+  if params.view then params.view:insert(obj.allowedArea) end
+
   return obj
 end

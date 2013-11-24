@@ -65,7 +65,7 @@ local function main()
 		}
 	end
 	
-	storyboard.gotoScene("scripts.demos.ui.widget", "fade", 100)
+	storyboard.gotoScene("scripts.demos.modules.camera", "fade", 100)
 
 	return true
 end
