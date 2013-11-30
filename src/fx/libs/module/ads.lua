@@ -29,11 +29,26 @@ end
 function fxAds.init()
 	print('initializing ads')
 	-- Load Corona 'ads' library
+	local baseCalculation = w / 320
+	if system.orientation ~= "portrait" then
+		baseCalculation = h / 320
+	end
+
 	if fx.device.isApple then
 		if fx.device.isTablet then
-			fxAds.bannerHeight = w / 320 * 50
+			fxAds.bannerWidth = w
+			if system.orientation ~= "portrait" then
+				fxAds.bannerHeight = baseCalculation * 30
+			else
+				fxAds.bannerHeight = baseCalculation * 66
+			end
 		else
-			fxAds.bannerHeight = w / 320 * 66
+			fxAds.bannerWidth = w
+			if w > h then
+				fxAds.bannerHeight = baseCalculation * 32
+			else
+				fxAds.bannerHeight = baseCalculation * 50
+			end
 		end
 
 		-- The name of the ad provider.
@@ -43,16 +58,21 @@ function fxAds.init()
 
 	elseif fx.device.isAndroid then
 		if fx.device.isTablet then
-			fxAds.bannerHeight = w / 320 * 90
+			fxAds.bannerWidth = w
+			fxAds.bannerHeight = baseCalculation * 90
 		else
-			fxAds.bannerHeight = w / 320 * 50
+			fxAds.bannerWidth = w
+			fxAds.bannerHeight = baseCalculation * 50
 		end
+		--fxAds.bannerHeight = fxAds.bannerHeight / 2
 
 		-- The name of the ad provider.
 		local adNetwork = "admob"
 		local appID = appInfo.ads.adMob
 		ads.init(adNetwork, appID, fxAdListener)
 	end
+
+	print(fxAds.bannerWidth, fxAds.bannerHeight)
 end
 
 function fxAds.showBanner(x, y, params)
@@ -62,19 +82,16 @@ function fxAds.showBanner(x, y, params)
 		end
 		fxAds.adBox = display.newGroup()
 
-		local o = display.newRect(fxAds.adBox, x, y, w, fxAds.bannerHeight)
+		local o = display.newRect(fxAds.adBox, x+fxAds.bannerWidth/2, y+fxAds.bannerHeight/2, fxAds.bannerWidth, fxAds.bannerHeight)
 		o:setFillColor(255, 0, 0)
 
-		o = fx.ui.newText(fxAds.adBox, "Ads Here", 0, 0, native.systemFont, iif(fx.device.isTablet, 30, 25))
-		o.x = w/2
-		o.y = y + fxAds.bannerHeight/2
+		--o = fx.ui.newText(fxAds.adBox, "Ads Here", 0, 0, native.systemFont, iif(fx.device.isTablet, 30, 25))
+		--o.x = x + fxAds.bannerWidth/2
+		--o.y = y + fxAds.bannerHeight/2
 	elseif fx.device.isApple then
 		ads.show("banner", {x=x, y=y, testMode=appInfo.mode == "TESTING"})
 
 	elseif fx.device.isAndroid then
-		if params.srpH == "bottom" then
-			y = y - fxAds.bannerHeight
-		end
 		ads.show("banner", {x=x, y=y, testMode=appInfo.mode == "TESTING"})
 	end
 end
@@ -88,8 +105,7 @@ function fxAds.rateUsPopUp()
 		fxAds.rateShown = true
 		native.showAlert(fx.i18n.get("Menu-RateUs-Title"), fx.i18n.get("Menu-RateUs-Msg"), {
 			fx.i18n.get("Menu-RateUs-Rate"),
-			fx.i18n.get("Menu-RateUs-Later"),
-			fx.i18n.get("Menu-RateUs-Never")
+			fx.i18n.get("Menu-RateUs-Later")
 		}, function(event)
 			if "clicked" == event.action then
 				local i = event.index

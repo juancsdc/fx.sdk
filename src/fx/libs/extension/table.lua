@@ -37,6 +37,27 @@ table.shuffle = function( t, iter )
 	return t
 end
 
+
+-- ==
+-- table.key( t ) - Determine if the table contains the given key
+-- ==
+function table.hasKey(table, key)
+	return table[key] ~= nil
+end
+
+
+-- ==
+-- table.key( t ) - Determine if the table contains the given element
+-- ==
+function table.contains(table, element)
+	for _, value in pairs(table) do
+		if value == element then
+			return true
+		end
+	end
+	return false
+end
+
 -- ==
 --    table.combineUnique( ... ) - Combines n tables into a single table containing only unique members from each source table.
 -- ==

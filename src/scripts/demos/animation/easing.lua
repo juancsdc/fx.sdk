@@ -35,6 +35,9 @@ function nextAnimation()
 		transition.to(scene.balls[anim], {time = effects[anim].time, y = h-500, transition=effects[anim].fx, onComplete = nextAnimation})
 	end
 	anim = anim + 1
+	if anim == 3 then
+		scene.startButton:setEnabled(true)
+	end
 end
 
 function buttonPressed(event)

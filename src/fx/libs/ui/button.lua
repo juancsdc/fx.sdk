@@ -41,8 +41,12 @@ function fxButton:new(params)
 	if(params.view) then params.view:insert(button) end
 
 	function button:setEnabled(enabled)
-		self._view._isEnabled = isEnabled
-		button:_setStatus("disabled")
+		self._view._isEnabled = enabled
+		if enabled then
+			button:_setStatus("onRelease")
+		else
+			button:_setStatus("disabled")
+		end
 	end
 
 	function button:_setStatus(status)

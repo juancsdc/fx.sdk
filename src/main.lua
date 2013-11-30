@@ -1,4 +1,3 @@
-system.setIdleTimer(false); -- turn off device sleeping
 
 require("fx.loader")
 
