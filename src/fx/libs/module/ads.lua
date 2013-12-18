@@ -40,7 +40,7 @@ function fxAds.init()
 			if system.orientation ~= "portrait" then
 				fxAds.bannerHeight = baseCalculation * 30
 			else
-				fxAds.bannerHeight = baseCalculation * 66
+				fxAds.bannerHeight = baseCalculation * 32
 			end
 		else
 			fxAds.bannerWidth = w
@@ -71,8 +71,6 @@ function fxAds.init()
 		local appID = appInfo.ads.adMob
 		ads.init(adNetwork, appID, fxAdListener)
 	end
-
-	print(fxAds.bannerWidth, fxAds.bannerHeight)
 end
 
 function fxAds.showBanner(x, y, params)
@@ -82,8 +80,8 @@ function fxAds.showBanner(x, y, params)
 		end
 		fxAds.adBox = display.newGroup()
 
-		local o = display.newRect(fxAds.adBox, x+fxAds.bannerWidth/2, y+fxAds.bannerHeight/2, fxAds.bannerWidth, fxAds.bannerHeight)
-		o:setFillColor(255, 0, 0)
+		fxAds.bannerSimulator = display.newRect(fxAds.adBox, x+fxAds.bannerWidth/2, y+fxAds.bannerHeight/2, fxAds.bannerWidth, fxAds.bannerHeight)
+		fxAds.bannerSimulator:setFillColor(255, 0, 0)
 
 		--o = fx.ui.newText(fxAds.adBox, "Ads Here", 0, 0, native.systemFont, iif(fx.device.isTablet, 30, 25))
 		--o.x = x + fxAds.bannerWidth/2
@@ -98,6 +96,9 @@ end
 
 function fxAds.hide()
 	ads.hide()
+	if fxAds.bannerSimulator then
+		safeRemove(fxAds.bannerSimulator)
+	end
 end
 
 function fxAds.rateUsPopUp()

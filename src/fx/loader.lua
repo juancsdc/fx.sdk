@@ -45,6 +45,7 @@ require("fx.libs.extension.table")
 -- ==
 --    Core (i.e. Used a lot and often by other SSK Classes)
 -- ==
+require("fx.libs.core.monitor")
 require("fx.libs.core.settings")
 require("fx.libs.core.i18n")
 require("fx.libs.core.sound")

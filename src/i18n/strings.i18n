@@ -17,6 +17,7 @@
 	"Menu-UI":								"UI",
 	"Menu-Widgets":							"Widgets",
 	"Menu-Modules":							"Modules",
+	"Menu-Ads":								"Ads",
 	"Menu-Camera":							"Camera",
 	"Menu-Joystick":						"Joystick",
 
@@ -28,4 +29,8 @@
 	"UI-Widget-Button-Enabled":				"Enabled",
 	"UI-Widget-Button-Disabled":			"Disabled",
 	"UI-Widget-Theme":						"Select your favourite theme",
+
+	"Modules-Ads-ShowTop":					"Show Banner on Top",
+	"Modules-Ads-ShowBottom":				"Show Banner on Bottom",
+	"Modules-Ads-Hide":						"Hide Ads",
 }

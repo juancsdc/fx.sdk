@@ -13,6 +13,7 @@ local menu = {
 	{demo = "", message = "UI", isCategory = true},
 	{demo = "ui.widget", message = "Widgets"},
 	{demo = "", message = "Modules", isCategory = true},
+	{demo = "modules.ads", message = "Ads"},
 	{demo = "modules.camera", message = "Camera"},
 	{demo = "modules.joystick", message = "Joystick"},
 }
@@ -33,7 +34,7 @@ local function onRowTouch( event )
 
 	if "release" == phase then
 		sideBar:expandCollapse()
-		storyboard.gotoScene("scripts.demos."..menu[event.target.index].demo)
+		storyboard.gotoScene("scenes.demos."..menu[event.target.index].demo)
 	end
 end
 
@@ -64,7 +65,7 @@ local function main()
 		}
 	end
 	
-	storyboard.gotoScene("scripts.demos.modules.camera", "fade", 100)
+	storyboard.gotoScene("scenes.demos.modules.ads", "fade", 100)
 
 	return true
 end

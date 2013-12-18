@@ -86,7 +86,12 @@ function fxUI.loadTheme()
 	end
 
 	-- draw the background accordingly
-	display.setDefault( "background", unpack(fx.theme.application.bg))
+	display.setDefault("background", unpack(fx.theme.application.bg))
+	if fx.theme.application.bg.type == "image" then
+		local bg = display.newImageRect(fx.theme.application.bg.filename, w, h)
+		bg.x = w/2
+		bg.y = h/2
+	end
 end
 
 -- ==
@@ -155,4 +160,39 @@ function fxUI.newTableView(params)
 		require("fx.libs.ui.tableView")
 	end
 	return fx.ui.tableView:new(params)
+end
+
+-- ==
+--    fx.ui.fill( obj ) - Apply the fill property of the theme to an object
+--    obj - The object to test.
+-- == 
+function fxUI.fill(obj, fill)
+	if not fill then return end
+	if fill.fill then
+		obj.fill = fill.fill
+	end
+	if fill.effect then
+		obj.fill.effect = fill.effect
+		table.shallowCopy(fill.effectProperties, obj.fill.effect)
+	end
+	if fill.alpha then
+		obj.alpha = fill.alpha
+	end
+end
+
+-- ==
+--    fx.ui.stroke( obj ) - Apply the stroke property of the theme to an object
+--    obj - The object to test.
+-- == 
+function fxUI.stroke(obj, stroke)
+	if not stroke then return end
+	if stroke.fill then
+		obj.stroke = stroke.fill
+	end
+	if stroke.effect then
+		obj.stroke.effect = stroke.effect
+	end
+	if stroke.width then
+		obj.strokeWidth = stroke.width
+	end
 end
